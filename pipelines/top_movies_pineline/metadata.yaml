@@ -1,0 +1,65 @@
+blocks:
+- all_upstream_blocks_executed: true
+  color: null
+  configuration: {}
+  downstream_blocks:
+  - unique_movies_transform
+  executor_config: null
+  executor_type: local_python
+  has_callback: false
+  language: python
+  name: top_movies_loader
+  retry_config: null
+  status: executed
+  type: data_loader
+  upstream_blocks: []
+  uuid: top_movies_loader
+- all_upstream_blocks_executed: true
+  color: null
+  configuration: {}
+  downstream_blocks:
+  - movies_to_db
+  executor_config: null
+  executor_type: local_python
+  has_callback: false
+  language: python
+  name: unique_movies_transform
+  retry_config: null
+  status: executed
+  type: transformer
+  upstream_blocks:
+  - top_movies_loader
+  uuid: unique_movies_transform
+- all_upstream_blocks_executed: true
+  color: null
+  configuration: {}
+  downstream_blocks: []
+  executor_config: null
+  executor_type: local_python
+  has_callback: false
+  language: python
+  name: movies_to_db
+  retry_config: null
+  status: executed
+  type: data_exporter
+  upstream_blocks:
+  - unique_movies_transform
+  uuid: movies_to_db
+callbacks: []
+concurrency_config: {}
+conditionals: []
+data_integration: null
+description: null
+executor_config: {}
+executor_count: 1
+executor_type: null
+extensions: {}
+name: top_movies_pineline
+notification_config: {}
+retry_config: {}
+spark_config: {}
+tags: []
+type: python
+updated_at: '2023-08-15 06:53:49'
+uuid: top_movies_pineline
+widgets: []

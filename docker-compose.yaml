@@ -1,0 +1,21 @@
+version: '3.8'
+services:
+  movies-postges-db:
+    container_name: movies-postgres-db
+    image: postgres:latest
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_DB=moviesdb
+    ports:
+      - '5432:5432'
+    volumes:
+      - db:/var/lib/postgresql/data
+      - ./db/postgres_init.sql:/docker-entrypoint-initdb.d/init.sql
+  adminer:
+    image: adminer
+    ports:
+      - 8080:8080
+volumes:
+  db:
+    driver: local
