@@ -12,7 +12,7 @@
   </a>
 </h1>
 
-#Basic ETL (extract, transform, load) pipeline movies data using mage.ai
+<h1>Basic ETL (extract, transform, load) pipeline movies data using mage.ai</h1>
 
 Install mage.ai
 https://github.com/mage-ai/mage-ai
